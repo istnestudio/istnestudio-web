@@ -17,15 +17,10 @@ export const PaddingY = styled.div`
   }
 `;
 
-const PaddingXY = ({ children, ...props }: PaddingXYProps) => (
-  <PaddingX {...props}>
-    <PaddingY>
-      {children}
-    </PaddingY>
-  </PaddingX>
-)
+export const PaddingXY = styled.div`
+  padding: 24px;
 
-type PaddingXYProps = 
-  React.PropsWithChildren<React.HTMLAttributes<HTMLElement>>
-
-export default PaddingXY;
+  @media screen and (min-width: 1150px){
+    padding: 64px;
+  }
+`;

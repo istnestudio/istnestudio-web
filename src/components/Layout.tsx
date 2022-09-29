@@ -2,6 +2,7 @@ import * as React from "react";
 import Global from "./Stylings/Global";
 import Nav from "./Nav";
 import Main from "./Stylings/Main";
+import AnimatedCursor from "./AnimatedCursor";
 
 const Layout = ({ children }: React.PropsWithChildren) => (
   <>
@@ -11,6 +12,7 @@ const Layout = ({ children }: React.PropsWithChildren) => (
     <Main>
       <Global/>
       {children}
+    <AnimatedCursor/>
     </Main>
   </>
 )

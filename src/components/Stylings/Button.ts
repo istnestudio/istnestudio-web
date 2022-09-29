@@ -13,4 +13,14 @@ export default styled.button`
   font-size: 18px;
   color: white;
   width: fit-content;
+  border: 2px solid ${main};
+  cursor: pointer;
+  transition: 
+    color .2s, 
+    background .2s;
+  
+  &:hover{
+    color: ${main};
+    background: transparent;
+  }
 `;

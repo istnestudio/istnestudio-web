@@ -11,4 +11,9 @@ export default styled.h2<{ color?: string }>`
     font-size: 48px;
     line-height: 64px;
   }
+
+  @media screen and (min-width: 1550px){
+    font-size: 64px;
+    line-height: 96px;
+  }
 `;

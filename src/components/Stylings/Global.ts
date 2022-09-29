@@ -28,6 +28,7 @@ export default createGlobalStyle`
     padding: 0;
     margin: 0;
     font-family: "Open Sauce Sans";
+    background: white;
   }
 
   a,
@@ -42,6 +43,7 @@ export default createGlobalStyle`
   *::before,
   *::after{
     box-sizing: border-box;
+    cursor: none;
   }
 
   .tl-edges{
