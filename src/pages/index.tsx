@@ -1,13 +1,11 @@
 import * as React from "react";
 import styled from "styled-components";
 import { graphql, PageProps } from "gatsby";
-import { PaddingX } from "../components/Stylings/Paddings";
-import Title from "../components/Stylings/Title";
-import Description from "../components/Stylings/Description";
-import { dark, main } from "../colors";
-import Button from "../components/Stylings/Button";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
-import Projects from "../components/Projects/Projects";
+import { Projects, Partners, Contact, Footer } from "../components/Sections";
+import { Description, Button, Title, PaddingX } from "../components/Stylings";
+import Blob from "../images/svgs/blob-haikei.inline.svg";
+import { dark, main } from "../colors";
 
 const Home = ({ 
   data: {
@@ -22,6 +20,9 @@ const Home = ({
   return (
     <Wrapper>
       <Landing>
+        <LandingBlob>
+          <Blob/>
+        </LandingBlob>
         {image && (
           <GatsbyImage
             image={image.gatsbyImageData as unknown as IGatsbyImageData}
@@ -29,19 +30,20 @@ const Home = ({
             style={{ position: "absolute", right: 0 }}
           />
         )}
-        <LandingImage>
-        </LandingImage>
         <LandingContent>
           <LandingText>
-            <Title as="h1" color={main}>
+            <LandingTitle as="h1" color={main}>
               {title}
-            </Title>
+            </LandingTitle>
             <Description color={dark}>{description}</Description>
           </LandingText>
           <Button>{button}</Button>
         </LandingContent>
       </Landing>
       <Projects/>
+      <Partners/>
+      <Contact/>
+      <Footer/>
     </Wrapper>
   );
 };
@@ -76,14 +78,16 @@ const Landing = styled.div`
 
   img:last-child{
     opacity: 0.2 !important;
+    top: -5vh;
 
     @media screen and (min-width: 800px){
       opacity: 1 !important;
-      transform: scale(1);
+      width: 60vw;
+      top: 0;
     }
 
     @media screen and (min-width: 1150px){
-      transform: scale(1.22);
+      width: 55vw;
     }
   }
 
@@ -96,17 +100,45 @@ const Landing = styled.div`
   }
 `;
 
+const LandingTitle = styled(Title)`
+  @media screen and (min-width: 1550px){
+    font-size: 64px;
+    line-height: 96px;
+  }
+`;
+
+const LandingBlob = styled.div`
+  display: none;
+  position: absolute;
+  bottom: 0px;
+  transform: scale(1.8);
+
+  @media screen and (min-width: 1150px){
+    display: inherit;
+    right: -20vw;
+    bottom: -5vh;
+  }
+
+  @media screen and (min-width: 1550px){
+    display: inherit;
+    right: -10vw;
+    bottom: 10vh;
+  }
+`;
+
 const LandingContent = styled(PaddingX)`
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 48px;
+  padding-bottom: 48px;
 
   @media screen and (min-width: 800px) {
     position: absolute;
     bottom: 96px;
     width: fit-content;
     max-width: 500px;
+    padding-bottom: 0;
   }
 
   @media screen and (min-width: 1150px) {

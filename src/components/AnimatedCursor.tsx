@@ -1,9 +1,22 @@
 import * as React from "react";
 import styled from "styled-components";
 import gsap from "gsap";
-import { main } from "../colors";
 
-const pointerTags = ["button", "a"];
+const pointerTags = [
+  "button", 
+  "a", 
+  "article", 
+  "select", 
+  "input",
+  "textarea",
+  "label"
+];
+
+const pointerSelectors = [
+  ".select", 
+  ".select-choice", 
+  ".select-wrapper"
+];
 
 const AnimatedCursor = () => {
   const [isPointing, setPointingState] = React.useState<boolean>();
@@ -43,7 +56,18 @@ const AnimatedCursor = () => {
     const handleMouseOverOut = (e: MouseEvent, out: boolean) => {
       const target = e.target as HTMLElement | null;
 
-      if (!target || !pointerTags.includes(target.tagName.toLocaleLowerCase()))
+      const checkSelectors = () =>
+        pointerSelectors.filter(
+          (selector) => target?.matches(selector) !== false
+        ).length > 0;
+
+      console.log(checkSelectors());
+
+      if (
+        !target ||
+        (!pointerTags.includes(target.tagName.toLocaleLowerCase()) &&
+          !checkSelectors())
+      )
         return;
 
       setPointingState(!out);
@@ -89,7 +113,7 @@ const Cursor = styled.div`
   background: white;
   mix-blend-mode: difference;
 
-  @media (pointer:none), (pointer:coarse) {
+  @media (pointer: none), (pointer: coarse) {
     display: none;
     cursor: inherit !important;
   }
@@ -103,6 +127,7 @@ const CursorRing = styled.div`
   border-radius: 50vw;
   transform: translate(-50%, -50%);
   z-index: 101;
+  pointer-events: none;
 `;
 
 const CursorDot = styled.div`
@@ -116,6 +141,7 @@ const CursorDot = styled.div`
   z-index: 100;
   mix-blend-mode: difference;
   background: #faff65;
+  pointer-events: none;
 `;
 
 export default AnimatedCursor;

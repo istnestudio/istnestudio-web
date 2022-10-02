@@ -1,10 +1,10 @@
 import * as React from "react";
 import styled from "styled-components";
+import HamburgerMenu from "./HamburgerMenu";
+import Link from "./Link";
+import { PaddingX } from "./Stylings";
 import { dark, main } from "../colors";
 import selects, { logo } from "../selects";
-import HamburgerMenu from "./HamburgerMenu";
-import { PaddingX } from "./Stylings/Paddings";
-import Link from "./Link";
 
 const Nav = () => {
   const [ open, setOpenState ] = React.useState(false);
@@ -26,6 +26,7 @@ const Nav = () => {
 
 const Wrapper = styled(PaddingX)`
   background: white;
+  transition: .1s background;
   position: fixed;
   top: 0;
   left: 0;

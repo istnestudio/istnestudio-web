@@ -1,8 +1,7 @@
 import * as React from "react";
-import Global from "./Stylings/Global";
 import Nav from "./Nav";
-import Main from "./Stylings/Main";
 import AnimatedCursor from "./AnimatedCursor";
+import { Main, Global } from "./Stylings";
 
 const Layout = ({ children }: React.PropsWithChildren) => (
   <>

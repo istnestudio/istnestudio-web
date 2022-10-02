@@ -1,10 +1,9 @@
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import * as React from "react";
 import styled from "styled-components";
-import { dark } from "../../colors";
-import useProjects from "../../hooks/useProjects";
-import { PaddingXY } from "../Stylings/Paddings";
 import ProjectTile from "./ProjectTile";
+import { PaddingXY } from "../../Stylings";
+import useProjects from "../../../hooks/useProjects";
+import { dark } from "../../../colors";
 
 const Projects = () => {
   const projects = useProjects();
@@ -12,7 +11,9 @@ const Projects = () => {
   return(
     <Wrapper>
       <ProjectsTiles>
-        {projects.map(( project ) => <ProjectTile {...project}/>)}
+        {projects.slice(0, 6).map(( project ) => 
+          <ProjectTile {...project} key={project.id}/>
+        )}
       </ProjectsTiles>
     </Wrapper>
   )

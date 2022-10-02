@@ -34,7 +34,15 @@ const config: GatsbyConfig = {
     },
     __key: "pages"
   },
-    `gatsby-plugin-transition-link`
+    `gatsby-plugin-transition-link`,
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
+        },
+      },
+    },
   ]
 };
 

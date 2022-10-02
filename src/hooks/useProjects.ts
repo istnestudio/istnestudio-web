@@ -5,7 +5,6 @@ const useProjects = () =>
     {
       allDatoCmsProject(
         sort: { order: DESC, fields: meta___publishedAt }
-        limit: 6
       ) {
         nodes {
           id

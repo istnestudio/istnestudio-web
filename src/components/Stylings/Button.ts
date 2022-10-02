@@ -16,7 +16,7 @@ export default styled.button`
   border: 2px solid ${main};
   cursor: pointer;
   transition: 
-    color .2s, 
+    color .2s,   
     background .2s;
   
   &:hover{
