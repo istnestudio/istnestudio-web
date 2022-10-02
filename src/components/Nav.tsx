@@ -6,27 +6,48 @@ import { PaddingX } from "./Stylings";
 import { dark, main } from "../colors";
 import selects, { logo } from "../selects";
 
-const Nav = () => {
+const Nav = ({ color, background }: NavProps) => {
   const [ open, setOpenState ] = React.useState(false);
 
+  color ??= dark;
+  background ??= "white";
+
   return(
-    <Wrapper as="nav">
-      <Logo open={open}>{logo}</Logo>
+    <Wrapper as="nav" background={background} color={color}>
+      <Link to="/">
+        <Logo 
+          className="logo"
+          color={color}
+          onClick={() => setOpenState(false)}
+        >
+          {logo}
+        </Logo>
+      </Link>
       <Selects>
         {selects.map(({ display, href }) => (
-          <Select key={href}>
+          <Select key={href} color={color || ""} onClick={() => setOpenState(false)}>
             <Link to={href}>{display}</Link>
           </Select>
         ))}
       </Selects>
-      <HamburgerMenu onToggle={setOpenState}/>
+      <HamburgerMenu onToggle={setOpenState} color={color}/>
     </Wrapper>
   )
 }
 
-const Wrapper = styled(PaddingX)`
-  background: white;
-  transition: .1s background;
+export enum NavTheme{
+  Light = 1,
+  Dark
+}
+
+interface NavProps{
+  color?: string,
+  background?: string,
+}
+
+const Wrapper = styled(PaddingX)<{ background: string, color: string }>`
+  background: ${({ background }) => background};
+  transition: .1s background .5s;
   position: fixed;
   top: 0;
   left: 0;
@@ -34,9 +55,13 @@ const Wrapper = styled(PaddingX)`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 24px;
+  padding-top: 26px;
   padding-bottom: 24px;
   z-index: 101;
+  
+  button > div > div{
+    background: ${({ color }) => color};
+  }
   
   @media screen and (min-width: 1150px){
     padding-top: 32px;
@@ -72,13 +97,15 @@ const hoverEffect = () => `
   }
 `;
 
-const Logo = styled.a<{ open: boolean }>`
+const Logo = styled.p<{ color: string }>`
+  margin: 0;
+  padding: 0;
   position: relative;
   z-index: 101;
   font-size: 24px;
   font-weight: 600;
   transition: .25s color;
-  color: ${({ open }) => open ? "white" : dark};
+  color: ${({ color }) => color};
   ${() => hoverEffect()};
 
   @media screen and (min-width: 1550px){
@@ -102,8 +129,9 @@ const Selects = styled.ul`
   }
 `;
 
-const Select = styled.li`
+const Select = styled.li<{ color: string }>`
   font-size: 16px;
+  color: ${({ color }) => color};
   ${() => hoverEffect()};
 
   @media screen and (min-width: 1550px){

@@ -5,18 +5,23 @@ import { PaddingXY } from "../../Stylings";
 import useProjects from "../../../hooks/useProjects";
 import { dark } from "../../../colors";
 
-const Projects = () => {
+const Projects = ({ limit }: ProjectsProps) => {
   const projects = useProjects();
+  limit ??= true;
 
   return(
     <Wrapper>
       <ProjectsTiles>
-        {projects.slice(0, 6).map(( project ) => 
+        {[...(limit ? projects.slice(0, 6) : projects)].map(( project ) => 
           <ProjectTile {...project} key={project.id}/>
         )}
       </ProjectsTiles>
     </Wrapper>
   )
+}
+
+interface ProjectsProps{
+  limit?: boolean
 }
 
 const Wrapper = styled.section`

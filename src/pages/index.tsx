@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import { graphql, PageProps } from "gatsby";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
-import { Projects, Partners, Contact, Footer } from "../components/Sections";
+import { Projects, Partners } from "../components/Sections";
 import { Description, Button, Title, PaddingX } from "../components/Stylings";
 import Blob from "../images/svgs/blob-haikei.inline.svg";
 import { dark, main } from "../colors";
@@ -17,6 +17,11 @@ const Home = ({
     }
   },
 }: HomeProps) => {
+  const scrollIntoContact = () =>
+    document.querySelector("#contact-form")?.scrollIntoView({
+      behavior: "smooth"
+    });
+
   return (
     <Wrapper>
       <Landing>
@@ -37,13 +42,13 @@ const Home = ({
             </LandingTitle>
             <Description color={dark}>{description}</Description>
           </LandingText>
-          <Button>{button}</Button>
+          <Button onClick={scrollIntoContact}>
+            {button}
+          </Button>
         </LandingContent>
       </Landing>
       <Projects/>
       <Partners/>
-      <Contact/>
-      <Footer/>
     </Wrapper>
   );
 };

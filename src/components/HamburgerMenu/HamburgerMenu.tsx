@@ -6,19 +6,21 @@ import selects from "../../selects";
 import { main } from '../../colors';
 import Link from "../Link";
 
-const HamburgerMenu = ({ onToggle }: HamburgerMenuProps) => {
+const HamburgerMenu = ({ onToggle, color }: HamburgerMenuProps) => {
   const [open, setOpenState] = React.useState(false);
 
   React.useEffect(() => {
     onToggle && onToggle(open);
-  }, [ open ])
+  }, [ open ]);
+
+  color ??= "black";
 
   const switchMenu = () =>
     setOpenState(prev => !prev);
 
   return (
     <>
-      <HamburgerButton dom={{ onClick: switchMenu }} />
+      <HamburgerButton onClick={switchMenu} color={color}/>
       <Menu
         animate={open ? "open" : "closed"}
         variants={menuVariants}
@@ -71,7 +73,8 @@ const itemVariants = {
 };
 
 interface HamburgerMenuProps{
-  onToggle?: ( open: boolean ) => any
+  onToggle?: ( open: boolean ) => any,
+  color?: string
 }
 
 const Menu = styled(motion.div)`
@@ -79,7 +82,7 @@ const Menu = styled(motion.div)`
   flex-direction: column;
   align-items: flex-end;
   gap: 32px;
-  width: 100%;
+  width: 50%;
   height: 100vh;
   position: fixed;
   top: 0;

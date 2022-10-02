@@ -44,7 +44,7 @@ export default createGlobalStyle`
   *::before,
   *::after{
     box-sizing: border-box;
-    cursor: none;
+    cursor: none !important;
   }
 
   input, textarea{

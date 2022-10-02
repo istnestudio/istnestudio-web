@@ -15,7 +15,8 @@ const pointerTags = [
 const pointerSelectors = [
   ".select", 
   ".select-choice", 
-  ".select-wrapper"
+  ".select-wrapper",
+  ".logo"
 ];
 
 const AnimatedCursor = () => {
@@ -61,14 +62,11 @@ const AnimatedCursor = () => {
           (selector) => target?.matches(selector) !== false
         ).length > 0;
 
-      console.log(checkSelectors());
-
       if (
         !target ||
         (!pointerTags.includes(target.tagName.toLocaleLowerCase()) &&
           !checkSelectors())
-      )
-        return;
+      ) return;
 
       setPointingState(!out);
       const size = out ? 9 : 60;

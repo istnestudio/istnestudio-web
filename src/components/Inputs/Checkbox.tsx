@@ -21,6 +21,7 @@ type CheckboxProps = React.PropsWithChildren<{
 }> & Omit<React.HTMLAttributes<HTMLInputElement>, "id">
 
 const Wrapper = styled.div`
+  position: relative;
   display: grid;
   min-height: 43px;
   grid-template-columns: 32px 1fr;
@@ -47,8 +48,12 @@ const Checkbox = styled.input`
 `;
 
 const Description = styled.label`
+  position: relative;
   display: flex;
+  flex-direction: column;
   color: ${darkGray};
+  height: fit-content;
+  gap: 10px;
   font-size: 14px;
   line-height: 17px;
   margin-top: 2px;
@@ -58,6 +63,7 @@ const ErrMsg = styled.span`
   font-size: 12px;
   color: red;
   position: absolute;
+  bottom: -24px;
 `;
 
 export default CheckboxInput;

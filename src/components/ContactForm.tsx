@@ -5,7 +5,7 @@ import { Input, Button } from "./Stylings";
 
 const ContactForm = () => {
   return(  
-    <Wrapper>
+    <Wrapper id="contact-form">
       <InputGroup>
         <Input placeholder="Imię" name="name"/>
         <Input placeholder="Email" type="email" name="email"/>
