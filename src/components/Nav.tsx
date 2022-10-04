@@ -3,7 +3,7 @@ import styled from "styled-components";
 import HamburgerMenu from "./HamburgerMenu";
 import Link from "./Link";
 import { PaddingX } from "./Stylings";
-import { dark, main } from "../colors";
+import { dark, darkMain, main } from "../colors";
 import selects, { logo } from "../selects";
 
 const Nav = ({ color, background }: NavProps) => {
@@ -80,16 +80,13 @@ const hoverEffect = () => `
     top: 110%;
     width: 100%;
     height: 2.5px;
-    background: ${main};
+    background: ${darkMain};
     transition: .2s transform;
     transform: scaleX(0);
     transform-origin: right;
   }
 
   &:hover{
-    color: ${main};
-    cursor: pointer;
-
     &::after{
       transform: scaleX(1);
       transform-origin: left;

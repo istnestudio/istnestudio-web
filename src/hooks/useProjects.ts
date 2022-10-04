@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 
 const useProjects = () =>
-  useStaticQuery<ProjectsProps>(graphql`
+  useStaticQuery<Pick<Queries.Query, "allDatoCmsProject">>(graphql`
     {
       allDatoCmsProject(
         sort: { order: DESC, fields: meta___publishedAt }
@@ -17,7 +17,5 @@ const useProjects = () =>
       }
     }
   `).allDatoCmsProject.nodes;
-
-type ProjectsProps = { allDatoCmsProject: Queries.DatoCmsProjectConnection };
 
 export default useProjects;

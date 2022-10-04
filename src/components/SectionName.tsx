@@ -9,6 +9,8 @@ const SectionName = ({ children }: React.PropsWithChildren) => {
     const pageElement = pageName.current;
     const parent = pageElement?.parentElement;
 
+    if (parent) parent.style.position = "relative";
+
     const handleScroll = () => {
       if (!parent || !pageElement) return;
 
@@ -39,7 +41,7 @@ const SectionName = ({ children }: React.PropsWithChildren) => {
   );
 };
 
-const PageName = styled.div`
+const PageName = styled(PaddingX)`
   display: flex;
   align-items: flex-end;
   position: absolute;
@@ -50,11 +52,15 @@ const PageName = styled.div`
   background: linear-gradient(360deg, black 18.95%, rgba(0, 0, 0, 0) 100%);
   z-index: 50;
   pointer-events: none;
+  gap: 32px;
 `;
 
-const PageNameInfo = styled(PaddingX)`
+const PageNameInfo = styled.p`
+  padding: 0;
+  margin: 0;
   display: flex;
   color: white;
+  width: fit-content;
   padding-top: 32px;
   padding-bottom: 32px;
   justify-content: space-between;
@@ -62,15 +68,15 @@ const PageNameInfo = styled(PaddingX)`
 `;
 
 const PageNameLine = styled.div`
-  position: absolute;
+  position: relative;
   bottom: 44.5px;
-  left: 197px;
-  width: calc(100% - 197px - 24px);
+  flex-grow: 1;
+  width: fit-content;
   height: 2px;
   background: white;
 
   @media screen and (min-width: 1150px) {
-    width: calc(100% - 197px - 64px);
+    width: fit-content;
   }
 `;
 

@@ -1,53 +1,37 @@
 import * as React from "react";
+import { graphql, PageProps } from "gatsby";
 import styled from "styled-components";
 import { main } from "../colors";
-import { PaddingX } from '../components/Stylings';
+import { PaddingX } from "../components/Stylings";
 import Layout from "../layouts";
-import { graphql } from 'gatsby';
 
-const Contact = ({ data }: ContactPageProps) => {
-  const { mail, phone, nip } = data.datoCmsContact;
-  if(!mail || !phone || !nip) return null;
+const Contact = ({
+  data: { datoCmsContact },
+}: PageProps<Pick<Queries.Query, "datoCmsContact">>) => {
+  if (!datoCmsContact) return null;
 
-  return(
-    <Layout
-      displayTitle={false}
-      color="white"
-      background={main}
-    >  
+  const { mail, phone, nip } = datoCmsContact;
+
+  return (
+    <Layout displayTitle={false} color="white" background={main}>
       <Wrapper>
-        <ContactInfo
-          label="mail"
-          content={mail}
-        />
-        <ContactInfo
-          label="tel."
-          content={phone}
-        />
-        <ContactInfo
-          label="nip"
-          content={nip}
-        />
+        <ContactInfo label="mail" content={mail || ""} />
+        <ContactInfo label="tel." content={phone || ""} />
+        <ContactInfo label="nip" content={nip || ""} />
       </Wrapper>
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   {
-    datoCmsContact{
-      nip,
-      phone,
+    datoCmsContact {
+      nip
+      phone
       mail
     }
   }
 `;
-
-interface ContactPageProps{
-  data: {
-    datoCmsContact: Queries.DatoCmsContact
-  }
-}
 
 const Wrapper = styled(PaddingX)`
   background: ${main};
@@ -57,7 +41,7 @@ const Wrapper = styled(PaddingX)`
   margin-top: -1px;
   gap: 24px;
 
-  @media screen and (min-width: 1150px){
+  @media screen and (min-width: 1150px) {
     flex-direction: row;
     width: 100%;
     flex-wrap: wrap;
@@ -72,9 +56,9 @@ const ContactInfo = ({ label, content }: ContactInfoProps) => (
   </ContactInfoWrapper>
 );
 
-interface ContactInfoProps{
-  label: string,
-  content: string
+interface ContactInfoProps {
+  label: string;
+  content: string;
 }
 
 const ContactInfoWrapper = styled(PaddingX)`
@@ -84,7 +68,7 @@ const ContactInfoWrapper = styled(PaddingX)`
   position: relative;
   color: white;
 
-  &::before{
+  &::before {
     content: "";
     position: absolute;
     height: 100%;
@@ -93,7 +77,7 @@ const ContactInfoWrapper = styled(PaddingX)`
     background: white;
   }
 
-  @media screen and (min-width: 1150px){
+  @media screen and (min-width: 1150px) {
     padding-left: 24px;
   }
 `;
@@ -103,7 +87,7 @@ const ContactInfoLabel = styled.p`
   padding: 0;
   font-size: 16px;
 
-  @media screen and (min-width: 1150px){
+  @media screen and (min-width: 1150px) {
     font-size: 20px;
   }
 `;
@@ -111,7 +95,7 @@ const ContactInfoLabel = styled.p`
 const ContactInfoContent = styled(ContactInfoLabel)`
   font-size: 24px;
 
-  @media screen and (min-width: 1150px){
+  @media screen and (min-width: 1150px) {
     font-size: 36px;
   }
 `;

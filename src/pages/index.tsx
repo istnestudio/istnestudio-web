@@ -1,26 +1,22 @@
 import * as React from "react";
-import styled from "styled-components";
 import { graphql, PageProps } from "gatsby";
+import styled from "styled-components";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
+import Layout from "../layouts";
 import { Projects, Partners } from "../components/Sections";
 import { Description, Button, Title, PaddingX } from "../components/Stylings";
 import Blob from "../images/svgs/blob-haikei.inline.svg";
 import { dark, main } from "../colors";
-import Layout from "../layouts";
 
-const Home = ({ 
-  data: {
-    datoCmsHome: {
-      image,
-      title,
-      button,
-      description
-    }
-  },
-}: HomeProps) => {
+const Home = ({
+  data: { datoCmsHome },
+}: PageProps<Pick<Queries.Query, "datoCmsHome">>) => {
+  if (!datoCmsHome) return null;
+  const { image, title, description, button } = datoCmsHome;
+
   const scrollIntoContact = () =>
     document.querySelector("#contact-form")?.scrollIntoView({
-      behavior: "smooth"
+      behavior: "smooth",
     });
 
   return (
@@ -28,7 +24,7 @@ const Home = ({
       <Wrapper>
         <Landing>
           <LandingBlob>
-            <Blob/>
+            <Blob />
           </LandingBlob>
           {image && (
             <GatsbyImage
@@ -44,13 +40,11 @@ const Home = ({
               </LandingTitle>
               <Description color={dark}>{description}</Description>
             </LandingText>
-            <Button onClick={scrollIntoContact}>
-              {button}
-            </Button>
+            <Button onClick={scrollIntoContact}>{button}</Button>
           </LandingContent>
         </Landing>
-        <Projects/>
-        <Partners/>
+        <Projects />
+        <Partners />
       </Wrapper>
     </Layout>
   );
@@ -71,12 +65,11 @@ export const query = graphql`
   }
 `;
 
-type HomeProps = PageProps<{ datoCmsHome: Queries.DatoCmsHome }>;
-
 const Wrapper = styled.div`
+  background: white;
   margin-top: 72px;
 
-  @media screen and (min-width: 1150px){
+  @media screen and (min-width: 1150px) {
     margin-top: 0;
   }
 `;
@@ -84,17 +77,17 @@ const Wrapper = styled.div`
 const Landing = styled.div`
   position: relative;
 
-  img:last-child{
+  img:last-child {
     opacity: 0.2 !important;
     top: -5vh;
 
-    @media screen and (min-width: 800px){
+    @media screen and (min-width: 800px) {
       opacity: 1 !important;
       width: 60vw;
       top: 0;
     }
 
-    @media screen and (min-width: 1150px){
+    @media screen and (min-width: 1150px) {
       width: 55vw;
     }
   }
@@ -109,7 +102,7 @@ const Landing = styled.div`
 `;
 
 const LandingTitle = styled(Title)`
-  @media screen and (min-width: 1550px){
+  @media screen and (min-width: 1550px) {
     font-size: 64px;
     line-height: 96px;
   }
@@ -121,13 +114,13 @@ const LandingBlob = styled.div`
   bottom: 0px;
   transform: scale(1.8);
 
-  @media screen and (min-width: 1150px){
+  @media screen and (min-width: 1150px) {
     display: inherit;
     right: -20vw;
     bottom: -5vh;
   }
 
-  @media screen and (min-width: 1550px){
+  @media screen and (min-width: 1550px) {
     display: inherit;
     right: -10vw;
     bottom: 10vh;

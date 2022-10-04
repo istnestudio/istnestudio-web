@@ -69,7 +69,7 @@ const Track = styled.div<{ count: number }>`
   }
 `;
 
-const Slides = styled.a<{ count: number }>`
+const Slides = styled.div<{ count: number }>`
   display: flex;
   position: absolute;
   height: 100%;

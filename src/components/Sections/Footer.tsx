@@ -5,9 +5,9 @@ import { PaddingX } from "../Stylings";
 import { main } from "../../colors";
 
 const links = [
-  { display: "przeczytaj więcej o naszych stronach", href: "#" },
-  { display: "nasze realizacje", href: "#" },
-  { display: "oferta dla dewelopera", href: "#" },
+  { display: "nasze realizacje", href: "/realizacje" },
+  //{ display: "przeczytaj więcej o naszych stronach", href: "#" },
+  //{ display: "oferta dla dewelopera", href: "#" },
 ];
 
 const Footer = () => (

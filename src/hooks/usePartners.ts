@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 
 const usePartners = () =>
-  useStaticQuery<PartnersProps>(graphql`
+  useStaticQuery<Pick<Queries.Query, "allDatoCmsPartner">>(graphql`
     {
       allDatoCmsPartner {
         nodes {
@@ -15,5 +15,4 @@ const usePartners = () =>
     }
   `).allDatoCmsPartner.nodes;
 
-type PartnersProps = { allDatoCmsPartner: Queries.DatoCmsPartnerConnection };
 export default usePartners;

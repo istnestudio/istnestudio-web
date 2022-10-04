@@ -1,0 +1,1 @@
+import "./static/styles/font.css"

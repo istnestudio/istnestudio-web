@@ -3,20 +3,20 @@ import styled from "styled-components";
 import gsap from "gsap";
 
 const pointerTags = [
-  "button", 
-  "a", 
-  "article", 
-  "select", 
+  "button",
+  "a",
+  "article",
+  "select",
   "input",
   "textarea",
-  "label"
+  "label",
 ];
 
 const pointerSelectors = [
-  ".select", 
-  ".select-choice", 
+  ".select",
+  ".select-choice",
   ".select-wrapper",
-  ".logo"
+  ".logo",
 ];
 
 const AnimatedCursor = () => {
@@ -66,7 +66,8 @@ const AnimatedCursor = () => {
         !target ||
         (!pointerTags.includes(target.tagName.toLocaleLowerCase()) &&
           !checkSelectors())
-      ) return;
+      )
+        return;
 
       setPointingState(!out);
       const size = out ? 9 : 60;

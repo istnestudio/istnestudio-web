@@ -5,6 +5,7 @@ import Main from "./Main";
 import Title from "./Title";
 import Global from "./Global";
 import { PaddingX, PaddingY, PaddingXY } from "./Paddings";
+import InputError from "./InputError";
 
 export{
   Button,
@@ -15,5 +16,6 @@ export{
   PaddingX,
   PaddingY,
   PaddingXY,
-  Title
+  Title,
+  InputError
 }

@@ -4,3 +4,4 @@ export const gray = "#F8F8FF";
 export const darkGray = "#595959";
 export const lightMain = "#E2E1FF";
 export const darkMain = "#040076";
+export const red = "#DE3737";

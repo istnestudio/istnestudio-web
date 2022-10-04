@@ -16,7 +16,7 @@ const SelectInput = ({ label, data, error, ...dom }: InputProps) => {
   const selectRef = React.useRef<HTMLSelectElement>(null);
 
   React.useEffect(() => {
-    selectRef.current?.dispatchEvent(
+    value !== "" && selectRef.current?.dispatchEvent(
       new Event("change", {
         bubbles: true,
         cancelable: true,

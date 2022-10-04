@@ -2,29 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import { darkMain, lightMain } from "../../colors";
 
 export default createGlobalStyle`
-  @font-face {
-    font-family: "Open Sauce Sans";
-    src: url("/fonts/OpenSauceSans-Medium.ttf");
-  }
-
-  @font-face {
-    font-family: "Open Sauce Sans";
-    src: url("/fonts/OpenSauceSans-Bold.ttf");
-    font-weight: 800;
-  }
-
-  @font-face {
-    font-family: "Open Sauce Sans";
-    src: url("/fonts/OpenSauceSans-SemiBold.ttf");
-    font-weight: 600;
-  }
-
-  @font-face {
-    font-family: "Open Sauce Sans";
-    src: url("/fonts/OpenSauceSans-Light.ttf");
-    font-weight: 200;
-  }
-
   html, body{
     padding: 0;
     margin: 0;

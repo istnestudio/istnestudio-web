@@ -18,7 +18,7 @@ const CheckboxInput = ({ children, error, ...dom }: CheckboxProps) => {
 
 type CheckboxProps = React.PropsWithChildren<{
   error?: string
-}> & Omit<React.HTMLAttributes<HTMLInputElement>, "id">
+}> & Omit<React.InputHTMLAttributes<HTMLInputElement>, "id">
 
 const Wrapper = styled.div`
   position: relative;

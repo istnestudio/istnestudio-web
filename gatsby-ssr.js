@@ -6,29 +6,33 @@ export const onRenderBody = ({ setHeadComponents }) => {
       rel="preload"
       href="fonts/OpenSauceSans-Bold.ttf"
       as="font"
+      type="font/ttf"
       crossOrigin="anonymous"
-      key="interFont"
+      key="sauceSans"
     />,
     <link 
       rel="preload"
       href="fonts/OpenSauceSans-Light.ttf"
       as="font"
+      type="font/ttf"
       crossOrigin="anonymous"
-      key="interFont"
+      key="sauceSans"
     />,
     <link 
       rel="preload"
       href="fonts/OpenSauceSans-Medium.ttf"
       as="font"
+      type="font/ttf"
       crossOrigin="anonymous"
-      key="interFont"
+      key="sauceSans"
     />,
     <link 
       rel="preload"
       href="fonts/OpenSauceSans-SemiBold.ttf"
       as="font"
+      type="font/ttf"
       crossOrigin="anonymous"
-      key="interFont"
+      key="sauceSans"
     />,
   ])
 }
