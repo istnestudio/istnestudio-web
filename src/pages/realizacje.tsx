@@ -3,13 +3,19 @@ import styled from "styled-components";
 import { dark } from "../colors";
 import SectionName from "../components/SectionName";
 import { Projects } from "../components/Sections";
+import Layout from "../layouts";
 
 const Realizations = () => {
   return(
-    <Wrapper>
-      <Projects limit={false}/>
-      <SectionName>Realizacje</SectionName>
-    </Wrapper>
+    <Layout
+      color="white"
+      background={dark}
+    >
+      <Wrapper>
+        <Projects limit={false}/>
+        <SectionName>Realizacje</SectionName>
+      </Wrapper>
+    </Layout>
   )
 }
 

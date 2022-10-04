@@ -6,6 +6,7 @@ const usePartners = () =>
       allDatoCmsPartner {
         nodes {
           id
+          link
           image {
             gatsbyImageData(placeholder: BLURRED)
           }

@@ -6,6 +6,7 @@ import { Projects, Partners } from "../components/Sections";
 import { Description, Button, Title, PaddingX } from "../components/Stylings";
 import Blob from "../images/svgs/blob-haikei.inline.svg";
 import { dark, main } from "../colors";
+import Layout from "../layouts";
 
 const Home = ({ 
   data: {
@@ -23,33 +24,35 @@ const Home = ({
     });
 
   return (
-    <Wrapper>
-      <Landing>
-        <LandingBlob>
-          <Blob/>
-        </LandingBlob>
-        {image && (
-          <GatsbyImage
-            image={image.gatsbyImageData as unknown as IGatsbyImageData}
-            alt="Home image"
-            style={{ position: "absolute", right: 0 }}
-          />
-        )}
-        <LandingContent>
-          <LandingText>
-            <LandingTitle as="h1" color={main}>
-              {title}
-            </LandingTitle>
-            <Description color={dark}>{description}</Description>
-          </LandingText>
-          <Button onClick={scrollIntoContact}>
-            {button}
-          </Button>
-        </LandingContent>
-      </Landing>
-      <Projects/>
-      <Partners/>
-    </Wrapper>
+    <Layout>
+      <Wrapper>
+        <Landing>
+          <LandingBlob>
+            <Blob/>
+          </LandingBlob>
+          {image && (
+            <GatsbyImage
+              image={image.gatsbyImageData as unknown as IGatsbyImageData}
+              alt="Home image"
+              style={{ position: "absolute", right: 0 }}
+            />
+          )}
+          <LandingContent>
+            <LandingText>
+              <LandingTitle as="h1" color={main}>
+                {title}
+              </LandingTitle>
+              <Description color={dark}>{description}</Description>
+            </LandingText>
+            <Button onClick={scrollIntoContact}>
+              {button}
+            </Button>
+          </LandingContent>
+        </Landing>
+        <Projects/>
+        <Partners/>
+      </Wrapper>
+    </Layout>
   );
 };
 

@@ -14,9 +14,10 @@ const Partners = () => {
 
   const doubledPartners = [
     ...partners,
-    ...partners.map(({ id, image }) => ({
+    ...partners.map(({ id, image, link }) => ({
       id: `${id}-2`,
       image,
+      link
     })),
   ];
 
@@ -24,8 +25,8 @@ const Partners = () => {
     <Wrapper as="section">
       <Track count={clamp(partners.length, partners.length, 8)}>
         <Slides count={partners.length}>
-          {doubledPartners.map(({ id, image }) => (
-            <Slide key={id}>
+          {doubledPartners.map(({ id, image, link }) => (
+            <Slide key={id} href={link || ""}>
               <GatsbyImage
                 image={image?.gatsbyImageData as unknown as IGatsbyImageData}
                 alt={id}
@@ -68,7 +69,7 @@ const Track = styled.div<{ count: number }>`
   }
 `;
 
-const Slides = styled.div<{ count: number }>`
+const Slides = styled.a<{ count: number }>`
   display: flex;
   position: absolute;
   height: 100%;
@@ -80,6 +81,10 @@ const Slides = styled.div<{ count: number }>`
     width: calc(${desktopWidth} * ${({ count }) => count * 2});
     animation: ${({ count }) => slide(count, desktopWidth)} ${animationLength}
       linear infinite;
+  }
+
+  &:hover{
+    animation-play-state: paused;
   }
 `;
 
