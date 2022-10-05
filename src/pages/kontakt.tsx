@@ -3,6 +3,7 @@ import { graphql, PageProps } from "gatsby";
 import styled from "styled-components";
 import { main } from "../colors";
 import { PaddingX } from "../components/Stylings";
+import SEO from "../components/Seo";
 import Layout from "../layouts";
 
 const Contact = ({
@@ -22,6 +23,11 @@ const Contact = ({
     </Layout>
   );
 };
+
+export const Head = () => 
+  <SEO
+    title="Kontakt"
+  />;
 
 export const query = graphql`
   {

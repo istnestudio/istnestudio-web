@@ -3,7 +3,9 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `IstneStudio`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.yourdomain.tld`,
+    description: "Kolektyw dwóch osób pełnych pasji i zaangażowania w tym co robią. Specjalizujemy się w tworzeniu stron w oparciu o najnowsze technologie i rozwiązania. Dostarczymi Ci stronę odpowiadającą na dzisiejsze zapotrzebowanie rynkowe.",
+    image: "/icon.png"
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -41,6 +43,12 @@ const config: GatsbyConfig = {
         rule: {
           include: /\.inline\.svg$/,
         },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'static/images/icon.png',
       },
     },
   ]

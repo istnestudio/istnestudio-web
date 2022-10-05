@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { dark } from "../colors";
 import SectionName from "../components/SectionName";
 import { Projects } from "../components/Sections";
+import SEO from "../components/Seo";
 import Layout from "../layouts";
 
 const Realizations = () => {
@@ -15,6 +16,11 @@ const Realizations = () => {
     </Layout>
   );
 };
+
+export const Head = () => 
+  <SEO
+    title="Realizacje"
+  />;
 
 const Wrapper = styled.div`
   padding-top: 16px;

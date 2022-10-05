@@ -7,6 +7,7 @@ import { Projects, Partners } from "../components/Sections";
 import { Description, Button, Title, PaddingX } from "../components/Stylings";
 import Blob from "../images/svgs/blob-haikei.inline.svg";
 import { dark, main } from "../colors";
+import SEO from "../components/Seo";
 
 const Home = ({
   data: { datoCmsHome },
@@ -50,7 +51,7 @@ const Home = ({
   );
 };
 
-export const Head = () => <title>Istne Studio</title>;
+export const Head = () => <SEO/>;
 
 export const query = graphql`
   {

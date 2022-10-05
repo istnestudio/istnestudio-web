@@ -1,11 +1,12 @@
 import * as React from "react";
 import { graphql, PageProps } from "gatsby";
 import styled from "styled-components";
-import Layout from "../layouts";
-import { PaddingX } from "../components/Stylings/Paddings";
-import { dark } from "../colors";
-import SectionName from "../components/SectionName";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
+import SEO from "../components/Seo";
+import { PaddingX } from "../components/Stylings/Paddings";
+import SectionName from "../components/SectionName";
+import Layout from "../layouts";
+import { dark } from "../colors";
 
 const About = ({
   data: { datoCmsAbout },
@@ -31,13 +32,17 @@ const About = ({
                 alt={filename || ""}
               />
             ))}
-            
           </TechnologiesImages>
         </Technologies>
       </Wrapper>
     </Layout>
   );
 };
+
+export const Head = () => 
+  <SEO
+    title="O nas"
+  />;
 
 const Wrapper = styled(PaddingX)`
   padding-top: 48px;
