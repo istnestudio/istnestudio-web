@@ -1,54 +1,26 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal TypeScript starter
-</h1>
+# Istne Studio - website
 
-## 🚀 Quick start
+Strona internetowa firmy istne-studio, zajmujemy się tworzeniem nowoczesnych stron internetowych.
 
-1.  **Create a Gatsby site.**
+![landing-page](https://cdn.discordapp.com/attachments/747723783544242299/1027584222380183692/Opera_Zrzut_ekranu_2022-10-06_161059_istnestudiowebmain.gatsbyjs.io.png)
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+---
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby
-    ```
+## Stack
+- React
+- Gatsby
+- DatoCMS
+- styled-components
+- TypeScript
 
-2.  **Start developing.**
+---
 
-    Navigate into your new site’s directory and start it up.
+## O nas
+Kolektyw trzech osób pełnych pasji i zaangażowania w tym co robią. Specjalizujemy się w tworzeniu stron w oparciu o najnowsze technologie i rozwiązania. Dostarczymi Ci stronę odpowiadającą na dzisiejsze zapotrzebowanie rynkowe.
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
-
-3.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.tsx` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+---
+## To Do
+- Backend formularza (na ten moment formularz nic nie wysyła)
+- Tagi i opisy (Usprawnienie SEO)
+- Więcej animacji
+- Wypełnienie cmsa resztą informacji (Dodanie wszystkich realizacji, partnerów)
