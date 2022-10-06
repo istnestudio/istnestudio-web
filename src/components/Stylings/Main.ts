@@ -6,4 +6,4 @@ export default styled.main`
   @media screen and (min-width: 1150px){
     padding-top: 116px;
   }
-`
+`;

@@ -8,7 +8,7 @@ import Layout from "../layouts";
 
 const Realizations = () => {
   return (
-    <Layout color="white" background={dark}>
+    <Layout color="white" background={dark} displayContactForm={false}>
       <Wrapper>
         <Projects limit={false} />
         <SectionName>Realizacje</SectionName>

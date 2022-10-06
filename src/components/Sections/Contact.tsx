@@ -22,11 +22,13 @@ const Wrapper = styled.section`
   flex-direction: column;
   gap: 48px;
   background: ${main};
-  padding: 48px 24px;
+  padding: 0 24px;
+  padding-top: 48px;
   margin-top: -1px;
 
   @media screen and (min-width: 1150px){
-    padding: 96px 64px;
+    padding: 0 64px;
+    padding-top: 96px;
 
     h2{
       font-size: 36px;

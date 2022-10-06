@@ -7,7 +7,7 @@ import { PaddingX } from "../Stylings";
 
 const desktopWidth = "240px";
 const mobileWidth = "216px";
-const animationLength = "10s";
+const animationLength = "20s";
 
 const Partners = () => {
   const partners = usePartners();

@@ -4,6 +4,8 @@ import { SelectInput, FileInput, Checkbox } from "../Inputs";
 import { Input, Button, InputError } from "../Stylings";
 import bytesToMb from "../../utils/bytesToMB";
 import ContactFormFile from "./ContactFormFile";
+import Link from "../Link";
+import { main } from "../../colors";
 
 const MAX_FILES_SIZE = 80;
 const MAX_FILES = 3;
@@ -179,7 +181,7 @@ const ContactForm = () => {
         />
       </InputGroup>
       <InputGroup>
-        <InputWrapper>
+        <DescriptionInputWrapper>
           <InputError>{description?.error}</InputError>
           <TextArea
             as="textarea"
@@ -189,8 +191,8 @@ const ContactForm = () => {
             onChange={handleInutChange}
             onBlur={handleBlur}
           />
-        </InputWrapper>
-        <FilesInputWrapper>
+        </DescriptionInputWrapper>
+        <InputWrapper>
           <InputError>{files?.error}</InputError>
           <FileInput 
             name="files" 
@@ -200,7 +202,7 @@ const ContactForm = () => {
           >
             Wgraj plik
           </FileInput>
-        </FilesInputWrapper>
+        </InputWrapper>
       </InputGroup>
       {files?.value?.length > 0 && (
         <Files>
@@ -214,7 +216,7 @@ const ContactForm = () => {
           ))}
         </Files>
       )}
-      <InputGroup>
+      <BottomInputGroup>
         <Checkbox
           name="checkbox"
           error={checkbox?.error}
@@ -223,10 +225,10 @@ const ContactForm = () => {
           *Wypełnienie formularza oznacza, że podane w nim dane osobowe będą
           przetwarzane w celu przesłania oferty oraz kontaktu w jej sprawie.
           <br />
-          Dowiedz się kto i jak przetwarza Twoje dane.
+          <Link to="#">Dowiedz się kto i jak przetwarza Twoje dane.</Link>
         </Checkbox>
         <Button type="submit">Wyślij brief</Button>
-      </InputGroup>
+      </BottomInputGroup>
     </Wrapper>
   );
 };
@@ -246,7 +248,7 @@ const Wrapper = styled.form`
 `;
 
 const InputGroup = styled.div`
-  display: flex;
+  display: grid;
   gap: 24px;
   flex-direction: column;
 
@@ -255,7 +257,7 @@ const InputGroup = styled.div`
   }
 
   @media screen and (min-width: 800px) {
-    flex-direction: row;
+    grid-template-columns: repeat(3, 1fr);
   }
 `;
 
@@ -267,8 +269,8 @@ const InputWrapper = styled.div`
   gap: 5px;
 `;
 
-const FilesInputWrapper = styled(InputWrapper)`
-  max-width: 310px;
+const DescriptionInputWrapper = styled(InputWrapper)`
+  grid-column: 1 / 3;
 `;
 
 const TextArea = styled(Input)`
@@ -281,6 +283,20 @@ const Files = styled.div`
   margin: 24px 0;
   display: flex;
   gap: 16px;
+`;
+
+const BottomInputGroup = styled(InputGroup)`
+  display: flex;
+
+  a{
+    color: ${main};
+    text-decoration: underline;
+  }
+  
+  @media screen and (min-width: 800px){
+    justify-content: space-between;
+    flex-direction: row;
+  }
 `;
 
 export default ContactForm;

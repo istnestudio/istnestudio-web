@@ -1,10 +1,11 @@
 import * as React from "react";
 import { graphql, PageProps } from "gatsby";
 import styled from "styled-components";
-import { main } from "../colors";
+import Layout from "../layouts";
+import ContactForm from "../components/ContactForm";
 import { PaddingX } from "../components/Stylings";
 import SEO from "../components/Seo";
-import Layout from "../layouts";
+import { main } from "../colors";
 
 const Contact = ({
   data: { datoCmsContact },
@@ -14,11 +15,14 @@ const Contact = ({
   const { mail, phone, nip } = datoCmsContact;
 
   return (
-    <Layout displayTitle={false} color="white" background={main}>
+    <Layout displayContactForm={false} color="white" background={main}>
       <Wrapper>
-        <ContactInfo label="mail" content={mail || ""} />
-        <ContactInfo label="tel." content={phone || ""} />
-        <ContactInfo label="nip" content={nip || ""} />
+        <ContactFormInfos>
+          <ContactInfo label="mail" content={mail || ""} />
+          <ContactInfo label="tel." content={phone || ""} />
+          <ContactInfo label="nip" content={nip || ""} />
+        </ContactFormInfos>
+        <ContactForm/>
       </Wrapper>
     </Layout>
   );
@@ -45,11 +49,25 @@ const Wrapper = styled(PaddingX)`
   flex-direction: column;
   padding-top: 48px;
   margin-top: -1px;
+  gap: 32px;
+  min-height: 89.2vh;
+
+  @media screen and (min-width: 1150px) {
+    padding-top: 0;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+`;
+
+const ContactFormInfos = styled.div`
+  height: fit-content;
+  flex-direction: column;
+  display: flex;
   gap: 24px;
 
   @media screen and (min-width: 1150px) {
     flex-direction: row;
-    width: 100%;
     flex-wrap: wrap;
     gap: 32px;
   }
@@ -72,6 +90,7 @@ const ContactInfoWrapper = styled(PaddingX)`
   flex-direction: column;
   gap: 5px;
   position: relative;
+  height: fit-content;
   color: white;
 
   &::before {

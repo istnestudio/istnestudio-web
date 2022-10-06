@@ -25,6 +25,8 @@ interface ProjectsProps{
 }
 
 const Wrapper = styled.section`
+  display: flex;
+  justify-content: center;
   position: relative;
   width: 100%;
   background: ${dark};
@@ -34,15 +36,12 @@ const ProjectsTiles = styled(PaddingXY)`
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
+  width: 100%;
   place-items: center;
   gap: 24px;
 
   @media screen and (min-width: 1150px){
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media screen and (min-width: 1550px){
-    grid-template-columns: repeat(3, 1fr);
   }
 `;
 

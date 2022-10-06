@@ -23,7 +23,6 @@ const Label = styled(Input)`
   gap: 10px;
   justify-content: center;
   width: 100%;
-  max-width: 310px;
   height: 128px;
   border: 2px dashed ${lightMain};
   color: ${darkGray};

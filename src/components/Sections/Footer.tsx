@@ -35,10 +35,12 @@ const Footer = () => (
 const Wrapper = styled(PaddingX)`
   background: ${main};
   padding-bottom: 48px;
+  padding-top: 48px;
   margin-top: -1px;
 
   @media screen and (min-width: 800px){
     padding-bottom: 96px;
+    padding-top: 96px;
   }
 `;
 

@@ -24,9 +24,9 @@ const Home = ({
     <Layout>
       <Wrapper>
         <Landing>
-          <LandingBlob>
+          {/* <LandingBlob>
             <Blob />
-          </LandingBlob>
+          </LandingBlob> */}
           {image && (
             <GatsbyImage
               image={image.gatsbyImageData as unknown as IGatsbyImageData}
@@ -89,7 +89,7 @@ const Landing = styled.div`
     }
 
     @media screen and (min-width: 1150px) {
-      width: 55vw;
+      width: 100%;
     }
   }
 
@@ -98,7 +98,7 @@ const Landing = styled.div`
   }
 
   @media screen and (min-width: 1150px) {
-    height: calc(100vh - 96px);
+    height: 700px;
   }
 `;
 

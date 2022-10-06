@@ -6,11 +6,16 @@ import { Contact, Footer } from "../components/Sections";
 import { dark } from "../colors";
 
 const Layout = ({ 
-  children, color, background, displayTitle 
+  children, 
+  color, 
+  background, 
+  displayContactForm,
+  displayContactFormTitle
 }: LayoutProps) => {
   color ||= dark;
   background ||= "white";
-  displayTitle ??= true;
+  displayContactForm ??= true;
+  displayContactFormTitle ??= true;
 
   return (
     <>
@@ -24,7 +29,9 @@ const Layout = ({
         <Global />
         <AnimatedCursor />
         {children}
-        <Contact displayTitle={displayTitle}/>
+        {displayContactForm && 
+          <Contact displayTitle={displayContactFormTitle}/>
+        }
         <Footer />
       </Main>
     </>
@@ -34,7 +41,8 @@ const Layout = ({
 type LayoutProps = React.PropsWithChildren<{
   color?: string,
   background?: string,
-  displayTitle?: boolean,
+  displayContactFormTitle?: boolean,
+  displayContactForm?: boolean,
 }>
 
 export default Layout;

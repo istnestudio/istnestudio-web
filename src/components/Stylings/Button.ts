@@ -8,6 +8,7 @@ export default styled.button`
   padding: 24px 32px;
   background: ${main};
   border: none;
+  height: fit-content;
   font-family: 'Open Sauce Sans';
   font-weight: 800;
   font-size: 18px;
@@ -15,6 +16,7 @@ export default styled.button`
   width: fit-content;
   border: 2px solid ${main};
   cursor: pointer;
+  
   transition: 
     color .2s,   
     background .2s;

@@ -16,7 +16,7 @@ const About = ({
   const { description, title, supported } = datoCmsAbout;
 
   return (
-    <Layout background={dark} color="white">
+    <Layout background={dark} color="white" displayContactForm={false}>
       <Wrapper>
         <SectionName>O nas</SectionName>
         <Description>{description}</Description>

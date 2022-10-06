@@ -30,7 +30,7 @@ const ProjectTile = ({
 const Wrapper = styled.article`
   position: relative;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 161 / 121;
 
   div:first-child{
     transition: .2s opacity;
