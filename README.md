@@ -2,7 +2,7 @@
 
 Strona internetowa firmy istne-studio, zajmujemy się tworzeniem nowoczesnych stron internetowych.
 
-![landing-page](https://cdn.discordapp.com/attachments/747723783544242299/1027584222380183692/Opera_Zrzut_ekranu_2022-10-06_161059_istnestudiowebmain.gatsbyjs.io.png)
+![landing-page](https://cdn.discordapp.com/attachments/747723783544242299/1027614593805197353/XDOpera_Zrzut_ekranu_2022-10-06_181307_istnestudiowebmain.gatsbyjs.io.png)
 
 ## Stack
 - React
