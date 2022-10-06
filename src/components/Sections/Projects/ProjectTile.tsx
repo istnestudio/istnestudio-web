@@ -14,7 +14,7 @@ const ProjectTile = ({
     <Wrapper>
       <HoverBox>
         <ProjectTitle>{title}</ProjectTitle>
-        <ProjectButton text="Zobacz projekt live" href={link || ""}>
+        <ProjectButton text="Zobacz projekt live" href={link || "#"}>
           <LinkIcon/>
         </ProjectButton>
       </HoverBox>
@@ -31,7 +31,6 @@ const Wrapper = styled.article`
   position: relative;
   width: 100%;
   height: 100%;
-  aspect-ratio: 322 / 257;
 
   div:first-child{
     transition: .2s opacity;

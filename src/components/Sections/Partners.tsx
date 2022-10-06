@@ -26,7 +26,7 @@ const Partners = () => {
       <Track count={clamp(partners.length, partners.length, 8)}>
         <Slides count={partners.length}>
           {doubledPartners.map(({ id, image, link }) => (
-            <Slide key={id} href={link || ""}>
+            <Slide key={id} href={link || "#"}>
               <GatsbyImage
                 image={image?.gatsbyImageData as unknown as IGatsbyImageData}
                 alt={id}
