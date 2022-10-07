@@ -8,6 +8,7 @@ const InputError = styled.span`
   top: -6px;
   padding: 2px;
   left: 6px;
+  z-index: 2;
 `;
 
 export default InputError
